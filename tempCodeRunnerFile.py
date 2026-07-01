@@ -1,0 +1,8 @@
+file257=pd.merge(file25,file7,on="order_id",how="inner")
+    file2573=pd.merge(file257,file3,on="seller_id",how="inner")
+    sns.set_style("whitegrid")
+    file2573["average_review"] = file2573.groupby("seller_city")["review_score"].transform("mean")
+    averagereview=(file2573.groupby("seller_city")["average_review"].mean().sort_values(ascending=False).head(10).reset_index())
+    sns.barplot(data=averagereview,y="seller_city",x="average_review")
+    plt.xlim(4.5, 5.0)
+    plt.show()
