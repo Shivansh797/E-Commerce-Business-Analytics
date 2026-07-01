@@ -131,8 +131,31 @@ def Seller_Analysis():
     plt.ylabel("Seller State")
     plt.title("Top 10 States With Highest Revenue")
     plt.show()
+def Payment_Analysis():
+    sns.set_style("whitegrid")
+    count1=file6["payment_type"].value_counts().head(4).index
+    sns.countplot(data=file6[file6["payment_type"].isin(count1)],x="payment_type",color="turquoise")
+    plt.xlabel("Payment Mode")
+    plt.ylabel("No. Of Orders")
+    plt.title("Most Used Payment Mode")
+    plt.show()
+    count2=file6["payment_installments"].value_counts().head(10).index
+    sns.countplot(data=file6[file6["payment_installments"].isin(count2)],y="payment_installments",hue="payment_type",palette="viridis")
+    plt.ylabel("Payment Installments")
+    plt.xlabel("No. Of Orders")
+    plt.title("Most Used Installment Plans")
+    plt.legend(title="Payment Mode")
+    plt.show()
+    count3=file6["payment_sequential"].value_counts().head(3).index
+    sns.countplot(data=file6[file6["payment_sequential"].isin(count3)],x="payment_sequential",hue="payment_type",palette="viridis")
+    plt.xlabel("Payment Sequential")
+    plt.ylabel("No. Of Orders")
+    plt.title("Most Common Payment Sequential")
+    plt.legend(title="Payment Mode")
+    plt.show()
 Data_Assessment()
 Customer_Analysis()
 Product_analysis()
 Seller_Analysis()
+Payment_Analysis()
 
