@@ -72,7 +72,7 @@ def Customer_Analysis():
     plt.legend(title="State")
     plt.title("Top 5 States With Orders Not Yet Delivered")
     plt.show()
-def product_analysis():
+def Product_analysis():
     file25=pd.merge(file2,file5,on="product_id",how="inner")
     file258=pd.merge(file25,file8,on="product_category_name",how="inner")
     file = file258.dropna().copy()
@@ -103,7 +103,36 @@ def product_analysis():
     plt.legend(title="Weight Distribution in gram")
     plt.title("Top 4 Most High Freight Value Product Categories With Weight Distribution")
     plt.show()
+def Seller_Analysis():
+    file35=pd.merge(file3,file5,on="seller_id",how="inner")
+    sns.set_style("whitegrid")
+    count1=file35["seller_city"].value_counts().head(10).index
+    sns.countplot(data=file35[file35["seller_city"].isin(count1)],y="seller_city",hue="seller_city",order=count1,palette="viridis",legend=False)
+    plt.xlabel("No. Of Orders")
+    plt.ylabel("Seller CIty Name")
+    plt.title("Top 10 Highest Selling Cities")
+    plt.show()
+    count2=file35["seller_state"].value_counts().head(10).index
+    sns.countplot(data=file35[file35["seller_state"].isin(count2)],y="seller_state",hue="seller_state",order=count2,palette="viridis",legend=False)
+    plt.xlabel("No. Of Orders")
+    plt.ylabel("Seller State Name")
+    plt.title("Top 10 Highest Selling States")
+    plt.show()
+    file35["revenue"]=file35["price"]+file35["freight_value"]
+    revenue=(file35.groupby("seller_city")["revenue"].sum().sort_values(ascending=False).head(10).reset_index())
+    sns.barplot(data=revenue,y="seller_city",x="revenue",hue="seller_city",palette="viridis",legend=False)
+    plt.xlabel("Total Revenue Generated In Millions")
+    plt.ylabel("Seller City")
+    plt.title("Top 10 Cities With Highest Revenue")
+    plt.show()
+    revenues=(file35.groupby("seller_state")["revenue"].sum().sort_values(ascending=False).head(10).reset_index())
+    sns.barplot(data=revenues,y="seller_state",x="revenue",hue="seller_state",palette="viridis",legend=False)
+    plt.xlabel("Total Revenue Generated In Millions")
+    plt.ylabel("Seller State")
+    plt.title("Top 10 States With Highest Revenue")
+    plt.show()
 Data_Assessment()
 Customer_Analysis()
-product_analysis()
+Product_analysis()
+Seller_Analysis()
 
