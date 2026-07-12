@@ -1,27 +1,47 @@
-# E-Commerce-Business-Analytics
+# E-Commerce Business Analytics
 
-End-to-end e-commerce business analytics project using Python, SQL, Power BI, and Excel to generate actionable business insights from multi-table data.
+An end-to-end e-commerce business analytics project using **Python, SQL, and Microsoft Power BI** to generate actionable business insights from a multi-table relational dataset.
 
-Aim of this project is to discover business insights from 8 inter-connected E-Commerce csv files by performing data cleaning, exploratory data analysis (EDA), SQL-based business queries, and making Interactive dashboards using Microsoft Power BI.
+The objective of this project is to analyze eight interconnected e-commerce datasets by performing data assessment, exploratory data analysis (EDA), SQL-based business queries, and interactive dashboard creation to answer real-world business questions.
+
+---
+
+# Project Workflow
+
+```
+8 CSV Files
+      │
+      ▼
+Python (Data Cleaning + EDA)
+      │
+      ▼
+MySQL (Business Queries)
+      │
+      ▼
+Power BI (Interactive Dashboards)
+      │
+      ▼
+Business Insights
+```
 
 ---
 
 # Project Overview
 
-This Project aims to answer the following questions using EDA ,Dashboards and SQL querries :
+This project aims to answer the following business questions:
 
-- Which states and cities generated the highest revenue and consumed the highest number of goods ?
-- Which product categories generated highest revenue and produces highest no. of goods ?
-- Which payment mode is used for most orders and generated highest revenue ?
-- Most common reason for orders not getting delivered ?
-- Which year generated highest revenue and got highest number of orders ?
-- Which cities have highest delays in order delivery ?
-- Which product categories have highest delays ?
-- Which time of the day and month of the year generates highest no. of orders and revenue ?
-- Which Product Categories have highest average review ?
-- Which seller cities and states have highest average review ?
-- How average review changes over undelivered goods ?
-- What are most common intallments plans ?
+- Which states and cities generated the highest revenue and received the highest number of orders?
+- Which product categories generated the highest revenue and sales volume?
+- Which payment methods were most frequently used?
+- Which order statuses contributed most to undelivered orders?
+- Which year generated the highest revenue and order volume?
+- Which customer locations experienced the longest delivery delays?
+- Which product categories experienced the highest delivery delays?
+- During which months and hours were customers most active?
+- Which product categories received the highest customer review scores?
+- Which seller cities and states received the highest customer ratings?
+- How do review scores differ between delivered and undelivered orders?
+- Which installment plans are most commonly used?
 
 ---
 
@@ -31,182 +51,162 @@ This Project aims to answer the following questions using EDA ,Dashboards and SQ
 - Pandas
 - Matplotlib
 - Seaborn
-- SQL
-- Power BI
+- MySQL
+- Microsoft Power BI
 
 ---
 
 # Analysis Performed
 
-## Data Assessment 
+## Data Assessment
 
 - Data Inspection
-- Data type inspection
-- Finding null values
-- Finding duplicate values
+- Data Type Analysis
+- Missing Value Analysis
+- Duplicate Value Detection
 
 ---
 
 ## Customer Analysis
 
-- Cities with highest number of orders
-- States with highest number of orders
-- Cities with orders not yet delivered
-- States with orders not yet delivered
+- Top customer cities by order volume
+- Top customer states by order volume
+- Cities with the highest number of undelivered orders
+- States with the highest number of undelivered orders
 
 ---
 
 ## Product Analysis
 
 - Most ordered product categories
-- Relation between product weight and freight price
+- Relationship between product weight and freight cost
 
 ---
 
 ## Seller Analysis
 
-- Cities that sold highest number of goods
-- States that sold highest number of goods
-- Cities that have generates highest revenue
-- States that have generates highest revenue
+- Top seller cities by sales volume
+- Top seller states by sales volume
+- Highest revenue generating seller cities
+- Highest revenue generating seller states
 
 ---
 
 ## Payment Analysis
 
-- Most common payment type
+- Most common payment methods
 - Most common installment plans
-- Payment sequentials
+- Payment sequence analysis
 
 ---
 
 ## Review Analysis
 
-- Highest average review among seller cities
-- Highest average review among seller states
-- Highest average review among product categories
+- Highest average review scores by seller city
+- Highest average review scores by seller state
+- Highest average review scores by product category
 
 ---
 
-## MySQL Analysis 
+## MySQL Business Queries
 
-- Months with highest number of orders
-- Years with highest number of orders
-- Customer city with highest dilevery delays
-- Customer city with highest difference in purchase date and delivery date  
-- Hour of day with highest number of purchases 
+- Orders by month
+- Orders by year
+- Customer cities with highest estimated delivery time
+- Customer cities with highest purchase-to-delivery duration
+- Peak purchase hours
 
 ---
 
 ## Power BI Dashboards
 
-- Executive Overview 
-- Customer And Sales Analysis
-- Payment Analysis 
+- Executive Overview
+- Customer & Sales Analysis
+- Payment Analysis
 
 ---
 
 # Major Insights
 
----
+## Revenue Insights
 
-## Revenue Insights 
-
-- Sao Paulo sells highest number of goods and generated highest revenue of more than 3 million followed by intinga and curitiba with revenue more than 500K.
-
-- SP sells most number of goods and generates highest revenue above 10 million followed by PR and MG.
-
-- Health and Beauty Products have highest revenue of 1.2 M followed by watches and gifts and bed bath table.
+- São Paulo generated the highest revenue, exceeding **3 million**, followed by Itinga and Curitiba with revenues above **500K**.
+- SP generated more than **10 million** in revenue, followed by PR and MG.
+- Health & Beauty products generated the highest revenue (over **1.2M**), followed by Watches & Gifts and Bed, Bath & Table.
 
 ---
 
-## Customer Cities
+## Customer Insights
 
-- Sao Paul have ordered highest number of goods  followed by Rio De Janerio 
-
-- SP have ordered highest number of products followed by RJ and MG
+- São Paulo recorded the highest number of customer orders, followed by Rio de Janeiro.
+- SP received the highest number of orders, followed by RJ and MG.
 
 ---
 
 ## Seller Insights
 
-- 2018 saw the highest number of orders 58K+ and revenue followed by 2017 and 2016
-
-- Overall August generates highest number of orders and revenue followed by march and may.
-
----
-
-## Product Related Insights
-
-- Bed-Bath-Table Category generated highest number of orders (10000+ orders) yet it is at 3rd position in terms of revenue.
-
-- Health-Beauty generated second highest number of orders but genersted highest revenue.
-
-- There is an increase in freight value with product weight.
+- **2018** recorded the highest number of orders (**58K+**) and generated the highest overall revenue.
+- **August** recorded the highest order volume and revenue, followed by March and May.
 
 ---
 
-## Logistics Related Insights
+## Product Insights
 
-- Among orders yet not delivered Shipped orders are in highest quantity followed by canceller orders and unavailable items.
-
-- Rio De Janerio have higher number of shipped orders than Sao Paulo despite having lower number of orders overall.
-
-- Jurutil city have highest gap in purchase date and delivery date followed by Alvorado D'Oeste and Portalage.
-
-- Novo Brasil city have highest average delivery delay followed by Capinzal Donorte and Adhemar De Baros.
-
-- Average review for all delivered goods is 4.16.
-
-- 2963 customers have undelivered orders while they have already paid 586K resulting in average review od 1.75 for all such orders.
+- Bed, Bath & Table recorded the highest number of orders (**10K+**), yet ranked only third in revenue.
+- Health & Beauty generated both high order volume and the highest overall revenue.
+- Freight cost generally increases with product weight.
 
 ---
 
-## Time Based Insights
+## Logistics Insights
 
-- Most Common order time during day is 4PM,11AM,2PM and 1PM.
-
-- 2018 generated highest revenue of 8.86 million followed by 2017 with 6.51 million.
-
-- Quater-3 of Year generated highest orders and revenue followed by Quater 1.
-
----
-
-## Payment Related Insights
-
-- Credit Card is most used payment mode with 76000+ orders with 12.54 million revenue payment value and followed by Boleto,Vouchers and debit card.
-
-- Boleto,debit card and vouchers have only 1 time payments while credit card users take installment plans.
+- Among undelivered orders, **Shipped** status accounted for the highest number, followed by **Canceled** and **Unavailable** orders.
+- Rio de Janeiro recorded more shipped orders than São Paulo despite having fewer overall orders.
+- **Juruti** recorded the longest average purchase-to-delivery duration.
+- **Novo Brasil** recorded the highest average delivery delay.
+- Delivered orders received an average review score of **4.16**.
+- Approximately **2,963** customers had undelivered orders despite already paying over **586K**, resulting in an average review score of only **1.75**.
 
 ---
 
-## Review Score Related Insights
+## Time-Based Insights
 
-- Health Beauty,Sports leisure and auto have highest average review scores.
-
-- Curtiba, Belo Horizonte and Santo Andre as seller cities have highest average review scores.
-
-- GO,RS and PE as seller states have highest average review score.
+- Customer purchasing activity peaked around **4 PM**, followed by **11 AM**, **2 PM**, and **1 PM**.
+- **2018** generated approximately **8.86 million** in revenue, followed by **2017** with **6.51 million**.
+- **Quarter 3** recorded the highest overall order volume and revenue.
 
 ---
 
-# Sample Visualisations 
+## Payment Insights
+
+- Credit Card was the most frequently used payment method, accounting for **76K+ orders** and over **12.5 million** in payment value.
+- Boleto, Debit Card, and Voucher payments were typically completed in a single payment, whereas Credit Card users commonly selected installment plans.
 
 ---
 
-## Most Common Payment Mode
+## Review Score Insights
+
+- Health & Beauty, Sports & Leisure, and Automotive products received the highest average customer review scores.
+- Curitiba, Belo Horizonte, and Santo André recorded the highest average seller review scores.
+- GO, RS, and PE achieved the highest average seller state review scores.
+
+---
+
+# Sample Visualizations
+
+## Most Common Payment Method
 
 ![](Graphs/mostcommonpaymentmode.png)
 
 ---
 
-## Highest Revenue Generating States 
+## Top Revenue Generating States
 
-![](Graphs/TOp10highestrevenuestate.png)
+![](Graphs/Top10HighestRevenueState.png)
 
 ---
 
-## Product Weight And Freight Value Relation
+## Product Weight vs Freight Cost
 
 ![](Graphs/Product_weight-Freight_value.png)
 
@@ -214,12 +214,38 @@ This Project aims to answer the following questions using EDA ,Dashboards and SQ
 
 # Power BI Dashboards
 
+## Executive Overview
+
+![](PowerBI/Dashboard_1.png)
+
 ---
 
-![](POWER_BI/Dashboard_1.png)
+## Customer & Sales Analysis
 
-![](POWER_BI/Dashboard_2.png)
+![](PowerBI/Dashboard_2.png)
 
-![](POWER_BI/Dashboard_3.png)
+---
+
+## Payment Analysis
+
+![](PowerBI/Dashboard_3.png)
+
+---
+
+```
+# Repository Structure
+
+E-Commerce-Business-Analytics
+│
+├── Data
+├── Graphs
+├── PowerBI
+├── SQL
+│   └── business_queries.sql
+├── analysis.py
+├── README.md
+├── requirements.txt
+└── .gitignore
+```
 
 ---
